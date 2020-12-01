@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styleNavbar.css">
+    <title>Form Tambah Mahasiswa</title>
+</head>
+<%- include('_partialCss') %>
+<body>
+    <%- include('_partialNavbar') %>
+    <div class="main-style">
+
+        <form action="/matakuliah/addMatakuliah" method="POST">
+        <fieldset>
+
+        <center><legend> Mata Kuliah</legend></center>
+
+        <label for="">Nama Mata Kuliah  :</label>
+        <input type="text" name="namaMatkul" placeholder="e.g: Pengantar Teknologi Informasi, Sistem basis Data, Algoritma etc "><br>
+        <label for="sks">Jumlah Sks :</label>
+        <input type="radio" name="sks" value="1"><label for="1">1 SKS</label>
+        <input type="radio" name="sks" value="2"><label for="2">2 SKS</label>
+        <input type="radio" name="sks" value="3"><label for="3">3 SKS</label>
+        <input type="radio" name="sks" value="4"><label for="4">4 SKS</label>
+
+        </fieldset>
+        <input type="submit" value="Simpan" />
+        </form>
+
+        </div>
+</body>
+</html>

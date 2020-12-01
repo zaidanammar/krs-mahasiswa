@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styleNavbar.css">
+    <title>Krs Mahasiswa</title>
+    <script>
+        function printContent(el){
+            var restorepage = document.body.innerHTML;
+            var printcontent = document.getElementById(el).innerHTML;
+            document.body.innerHTML = printcontent;
+            window.print();
+            document.body.innerHTML = restorepage;
+        }
+    </script>
+</head>
+<body>
+    <%- include('_partialNavbar') %>
+    <center>
+        <h1>Daftar Mahasiswa</h1>
+        <form action="/mahasiswa/<%=dataMahasiswa.id%>/matakuliah/add" method="POST">
+        <select name="matkul">
+            <option value="" selected disabled>--Pilih Mata Kuliah--</option>
+            <% for (let i=0; i<dataMataKuliah.length; i++ ) {%>
+
+                <option value="<%= dataMataKuliah[i].id%>"><%= dataMataKuliah[i].namaMatkul%></option>
+
+            <%}%>
+           </select>  <br><br>
+           <input type="submit" value="Save">
+        </form><br>
+        <button onclick="printContent('div1')">Cetak</button>
+
+        <div id="div1" style="margin-top: 20px;">
+
+        <table border=1>
+            <tr>
+                <th>Mata Kuliah</th>
+                <th>sks</th>
+            </tr>
+
+            <% for(let i=0; i<dataMahasiswa.Matakuliahs.length; i++){ %>
+            <tr>
+                <td><%= dataMahasiswa.Matakuliahs[i].namaMatkul %></td>
+                <td><%= dataMahasiswa.Matakuliahs[i].sks %></td>
+            </tr>
+            <% } %>
+
+        </table>
+                    
+        </div>
+    </center>
+</body>
+</html>

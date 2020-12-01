@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styleNavbar.css">
+    <title>Krs Mahasiswa</title>
+    <script>
+        function printContent(el){
+            var restorepage = document.body.innerHTML;
+            var printcontent = document.getElementById(el).innerHTML;
+            document.body.innerHTML = printcontent;
+            window.print();
+            document.body.innerHTML = restorepage;
+        }
+    </script>
+</head>
+<body>
+    <%- include('_partialNavbar') %>
+    <center>
+        <h1>Daftar Mata kuliah</h1>
+        <button onclick="printContent('div1')">Cetak</button>
+
+        <button><a href="/matakuliah/addMatakuliah">Tambah mata kuliah</a></button>
+        <br><br>
+        
+        <div id="div1">
+
+         <table border=1>
+             <tr>
+             
+             <th>Mata Kuliah</th>
+             <th>SKS</th>
+             <th>Opsi</th>
+           
+             
+             </tr>
+     
+             <% for(let i=0; i<matakuliah.length; i++){ %>
+                 <tr>  
+                   
+                     <td><%= matakuliah[i].namaMatkul %></td>
+                     <td><%= matakuliah[i].sks %></td>
+                    
+                    <td><a href="/matakuliah/editMatakuliah/<%=matakuliah[i].id%>">Edit</a> | <a href="/matakuliah/deleteMatakuliah/<%=matakuliah[i].id%>">Delete</a> |
+                        <a href="/matakuliah/<%=matakuliah[i].id%>/mahasiswa">lihat Mahasiswa</a></td>
+                 </tr>
+            <% } %>
+             
+         </table>
+                     
+        </div>
+    </center>
+</body>
+</html>

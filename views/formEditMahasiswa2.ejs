@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styleNavbar.css">
+    <title>Form Tambah Mahasiswa</title>
+</head>
+<%- include('_partialCss') %>
+<body>
+    <%- include('_partialNavbar') %>
+    <div class="main-style">
+
+        <form action="/mahasiswa/editMahasiswa/<%=dataMahasiswa.id%>" method="POST">
+        <fieldset>
+        <center><legend> Biodata</legend></center>
+        <label for="">Nama Lengkap :</label>
+        <input type="text" name="name" value="<%=dataMahasiswa.nama%>"><br>
+        <label for="">NIM :</label>
+        <input type="text" name="nim" value="<%=dataMahasiswa.nim%>"><br>
+        <label for="">Alamat :</label>
+        <input type="text" name="alamat" value="<%=dataMahasiswa.alamatUpper%>"><br>
+        <label for="job">Jurusan:</label>
+        <select id="job" name="jurusan">
+        <option value="" selected disabled>Pilih Jurusan</option>
+        <optgroup label="Fakultas Teknik">
+          <option value="teknik_Sipil" <%=dataMahasiswa.jurusan === 'teknik_Sipil' ? 'selected' : '' %>>Teknik Sipil</option>
+          <option value="teknik_Informatika" <%=dataMahasiswa.jurusan === 'teknik_Informatika' ? 'selected' : '' %>>Teknik Informatika</option>
+          <option value="teknik_Kimia" <%=dataMahasiswa.jurusan === 'teknik_Kimia' ? 'selected' : '' %>>Teknik Kimia</option>
+          <option value="teknik_Mesin" <%=dataMahasiswa.jurusan === 'teknik_Mesin' ? 'selected' : '' %>>Teknik Mesin</option>
+          <option value="teknik_Industri" <%=dataMahasiswa.jurusan === 'teknik_Industri' ? 'selected' : '' %>>Teknik Industri</option>
+        </optgroup>
+        <optgroup label="Fakultas Ekonomi">
+          <option value="ilmu_akuntansi" <%=dataMahasiswa.jurusan === 'ilmu_akuntansi' ? 'selected' : '' %>>Akuntansi</option>
+          <option value="ilmu_manejemen" <%=dataMahasiswa.jurusan === 'ilmu_manejemen' ? 'selected' : '' %>>Manejemen</option>
+        </optgroup>
+        <optgroup label="Fakultas Kedokteran">
+          <option value="ilmu_kedokteran" <%=dataMahasiswa.jurusan === 'ilmu_kedokteran' ? 'selected' : '' %>>Kedokteran</option>
+          <option value="kedokteran_Gigi" <%=dataMahasiswa.jurusan === 'kedokteran_Gigi' ? 'selected' : '' %>>Kedokteran Gigi</option>
+          <option value="ilmu_psikologi" <%=dataMahasiswa.jurusan === 'ilmu_psikologi' ? 'selected' : '' %>>Psikologi</option>
+        </optgroup>
+        <optgroup label="Fakultas Hukum">
+          <option value="ilmu_Hukum" <%=dataMahasiswa.jurusan === 'ilmu_Hukum' ? 'selected' : '' %>>Ilmu Hukum</option>
+        </optgroup>
+        <optgroup label="Fakultas Teknolgi">
+          <option value="sistem_Informasi" <%=dataMahasiswa.jurusan === 'sistem_Informasi' ? 'selected' : '' %>>Sistem Informasi</option>
+          <option value="teknologi_Informasi" <%=dataMahasiswa.jurusan === 'teknologi_Informasi' ? 'selected' : '' %>>Teknologi Informasi</option>
+        </optgroup>
+        <optgroup label="Fakultas Pertanian">
+          <option value="agri_bisnis" <%=dataMahasiswa.jurusan === 'agri_bisnis' ? 'selected' : '' %>>Agribisnis</option>
+          <option value="agro_teknologi" <%=dataMahasiswa.jurusan === 'agro_teknologi' ? 'selected' : '' %>>Agroteknologi</option>
+        </optgroup>
+        </select>      
+        </fieldset>
+        <input type="submit" value="Simpan" />
+        </form>
+
+        </div>
+</body>
+</html>

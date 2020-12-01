@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styleNavbar.css">
+    <title>Form Tambah Mahasiswa</title>
+</head>
+<%- include('_partialCss') %>
+<body>
+    <%- include('_partialNavbar') %>
+    <div class="main-style">
+
+        <form action="/mahasiswa/addMahasiswa" method="POST">
+        <fieldset>
+        <center><legend> Biodata</legend></center>
+        <label for="">Nama Lengkap :</label>
+        <input type="text" name="nama" placeholder="e.g: Mu'ammar Zaidan"><br>
+        <label for="">NIM :</label>
+        <input type="text" name="nim" placeholder="e.g: 200190135"><br>
+        <label for="">Alamat :</label>
+        <input type="text" name="alamat" placeholder="e.g: Jalan Gagak Hitam no.10b, Kota. Medan"><br>
+        <label for="job">Jurusan:</label>
+        <select id="job" name="jurusan">
+        <option value="" selected disabled>Pilih Jurusan</option>
+        <optgroup label="Fakultas Teknik">
+          <option value="teknik_Sipil">Teknik Sipil</option>
+          <option value="teknik_Informatika">Teknik Informatika</option>
+          <option value="teknik_Kimia">Teknik Kimia</option>
+          <option value="teknik_Mesin">Teknik Mesin</option>
+          <option value="teknik_Mesin">Teknik Industri</option>
+        </optgroup>
+        <optgroup label="Fakultas Ekonomi">
+          <option value="ilmu_akuntansi">Akuntansi</option>
+          <option value="ilmu_manejemen">Manejemen</option>
+        </optgroup>
+        <optgroup label="Fakultas Kedokteran">
+          <option value="ilmu_kedokteran">Kedokteran</option>
+          <option value="kedokteran_Gigi">Kedokteran Gigi</option>
+          <option value="ilmu_psikologi">Psikologi</option>
+        </optgroup>
+        <optgroup label="Fakultas Hukum">
+          <option value="ilmu_Hukum">Ilmu Hukum</option>
+        </optgroup>
+        <optgroup label="Fakultas Teknolgi">
+          <option value="sistem_Informasi">Sistem Informasi</option>
+          <option value="teknologi_Informasi">Teknologi Informasi</option>
+        </optgroup>
+        <optgroup label="Fakultas Pertanian">
+          <option value="agri_bisnis">Agribisnis</option>
+          <option value="agro_teknologi">Agroteknologi</option>
+        </optgroup>
+        </select>      
+        </fieldset>
+        <input type="submit" value="Simpan" />
+        </form>
+
+        </div>
+</body>
+</html>

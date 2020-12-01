@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krs Mahasiswa</title>
+    <link rel="stylesheet" href="/styleNavbar.css">
+</head>
+<body>
+    <%- include('_partialNavbar') %>
+    <center>
+        <h1>Register</h1>
+        <form action="/register" method="POST">
+            <label for="name">Nama :</label>
+            <input type="text" name="name" placeholder="input your name here"><br><br>
+            <label for="username">Username :</label>
+            <input type="text" name="username" placeholder="input your username here"><br><br>
+            <label for="password">Password :</label>
+            <input type="password" name="password" placeholder="input your password here"><br><br>
+            <input type="submit" value="Save">
+        </form>
+    </center>
+</body>
+</html>
